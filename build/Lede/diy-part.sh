@@ -100,7 +100,7 @@ sed -i "7i uci add_list zerotier.sample_config.join+='d3ecf5726da3eeac'" ${ZZZ_P
 
 
 # 设置dhcp顺序分配地址
-sed -i "7i uci set dhcp.cfg01411c.sequential_ip='1'" ${ZZZ_PATH}
+# sed -i "7i uci set dhcp.cfg01411c.sequential_ip='1'" ${ZZZ_PATH}
 # arpbind.cfg02fd05=arpbind
 # arpbind.cfg02fd05.ifname=br-lan
 # arpbind.cfg02fd05.ipaddr=192.168.10.137
