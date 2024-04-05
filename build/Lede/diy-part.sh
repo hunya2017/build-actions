@@ -73,18 +73,18 @@ export rootfs_size="2560"
 export kernel_usage="stable"
 
 # 添加lan口
-sed -i "5i uci add_list network.cfg030f15.ports='eth0'" ${ZZZ_PATH}
-sed -i "6i uci add_list network.cfg030f15.ports='eth2'" ${ZZZ_PATH}
-sed -i "7i uci add_list network.cfg030f15.ports='eth3'" ${ZZZ_PATH}
+# sed -i "5i uci add_list network.cfg030f15.ports='eth0'" ${ZZZ_PATH}
+# sed -i "6i uci add_list network.cfg030f15.ports='eth2'" ${ZZZ_PATH}
+# sed -i "7i uci add_list network.cfg030f15.ports='eth3'" ${ZZZ_PATH}
 
 # 设置IP租期
-sed -i "7i uci set dhcp.lan.leasetime='2m'" ${ZZZ_PATH}
+# sed -i "7i uci set dhcp.lan.leasetime='2m'" ${ZZZ_PATH}
 
 # 添加zerotier网络
-sed -i "7i uci add_list zerotier.sample_config.join='d3ecf5726da3eeac'" ${ZZZ_PATH}
+# sed -i "7i uci add_list zerotier.sample_config.join='d3ecf5726da3eeac'" ${ZZZ_PATH}
 
 # 设置dhcp顺序分配地址
-sed -i "7i uci set dhcp.cfg01411c.sequential_ip='1'" ${ZZZ_PATH}
+# sed -i "7i uci set dhcp.cfg01411c.sequential_ip='1'" ${ZZZ_PATH}
 
 
 
