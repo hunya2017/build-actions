@@ -72,20 +72,44 @@ export auto_kernel="true"
 export rootfs_size="2560"
 export kernel_usage="stable"
 
+
+# sed -i "7i uci add_list " ${ZZZ_PATH}
 # 添加lan口
+sed -i "5i uci set network.lan.ifname='eth0 eth2 eth3'" ${ZZZ_PATH}
+# network.lan._orig_bridge=true
+# network.lan._orig_ifname=eth0
+# network.lan.ifname=eth0 eth2 eth3
+
 # sed -i "5i uci add_list network.cfg030f15.ports='eth0'" ${ZZZ_PATH}
 # sed -i "6i uci add_list network.cfg030f15.ports='eth2'" ${ZZZ_PATH}
 # sed -i "7i uci add_list network.cfg030f15.ports='eth3'" ${ZZZ_PATH}
 
 # 设置IP租期
-# sed -i "7i uci set dhcp.lan.leasetime='2m'" ${ZZZ_PATH}
+
+sed -i "7i uci set dhcp.lan.leasetime='2m'" ${ZZZ_PATH}
 
 # 添加zerotier网络
-# sed -i "7i uci add_list zerotier.sample_config.join='d3ecf5726da3eeac'" ${ZZZ_PATH}
+# zerotier.sample_config
+# zerotier.sample_config.enabled=1
+# zerotier.sample_config.join+=
+# zerotier.sample_config.join+=d3ecf5726da3eeac
+# zerotier.sample_config.nat=1
+sed -i "7i uci add_list zerotier.sample_config.enabled='1'" ${ZZZ_PATH}
+sed -i "7i uci add_list zerotier.sample_config.nat='1'" ${ZZZ_PATH}
+sed -i "7i uci add_list zerotier.sample_config.join+='d3ecf5726da3eeac'" ${ZZZ_PATH}
+
 
 # 设置dhcp顺序分配地址
-# sed -i "7i uci set dhcp.cfg01411c.sequential_ip='1'" ${ZZZ_PATH}
+sed -i "7i uci set dhcp.cfg01411c.sequential_ip='1'" ${ZZZ_PATH}
+# arpbind.cfg02fd05=arpbind
+# arpbind.cfg02fd05.ifname=br-lan
+# arpbind.cfg02fd05.ipaddr=192.168.10.137
+# arpbind.cfg02fd05.macaddr=12:81:ad:c2:e5:64
 
+# arpbind.cfg01fd05=arpbind
+# arpbind.cfg01fd05.ifname=br-lan
+# arpbind.cfg01fd05.ipaddr=192.168.10.180
+# arpbind.cfg01fd05.macaddr=02:f5:73:f3:b5:64
 
 
 # 修改插件名字
