@@ -95,9 +95,9 @@ sed -i "7i uci set dhcp.lan.leasetime='2m'" ${ZZZ_PATH}
 # zerotier.sample_config.join+=d3ecf5726da3eeac
 # zerotier.sample_config.nat=1
 sed -i "7i uci add_list zerotier.sample_config.enabled='1'" ${ZZZ_PATH}
-sed -i "7i uci add_list zerotier.sample_config.nat='1'" ${ZZZ_PATH}
+sed -i "7i uci add_list zerotier.sample_config.join+=" ${ZZZ_PATH}
 sed -i "7i uci add_list zerotier.sample_config.join+='d3ecf5726da3eeac'" ${ZZZ_PATH}
-
+sed -i "7i uci add_list zerotier.sample_config.nat='1'" ${ZZZ_PATH}
 
 # 设置dhcp顺序分配地址
 # sed -i "7i uci set dhcp.cfg01411c.sequential_ip='1'" ${ZZZ_PATH}
