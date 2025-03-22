@@ -1,1 +1,28 @@
+#!/bin/sh
 
+# 设置主机名
+# uci set system.@system[0].hostname='MyRouter'
+# uci commit system
+
+# 配置网络
+# uci set network.lan.ipaddr='192.168.1.1'
+# uci commit network
+
+# 安装软件包
+# opkg update
+# opkg install luci
+uci set zerotier.sample_config.enabled='1'
+uci del zerotier.sample_config.join
+uci add_list zerotier.sample_config.join='d3ecf5726da3eeac'
+uci set zerotier.sample_config.nat='1'
+
+uci del dhcp.lan.ra_slaac
+uci del dhcp.lan.dhcpv6
+uci set dhcp.lan.leasetime='2m'
+uci set dhcp.lan.force='1'
+
+
+
+
+# 删除脚本自身，确保只运行一次
+rm -f /etc/uci-defaults/10-my-custom-config
