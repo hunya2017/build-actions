@@ -33,6 +33,7 @@ on:
         options:
           - 'x86_64'
           - 'aarch64'
+          - 'r3s'
       CPU_SELECTION:
         description: 'CPU优选,增加编译速度'
         required: true
