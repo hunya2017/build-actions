@@ -1,5 +1,4 @@
 #!/bin/sh
-uci del dhcp.lan.ra_slaac
 uci set dhcp.lan.leasetime='2m'
 
 uci add dhcp host # =cfg05fe63
