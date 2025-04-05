@@ -22,4 +22,3 @@ uci set zerotier.sample_config.nat='1'
 uci set vlmcsd.config.enabled='1'
 uci set vlmcsd.config.auto_activate='1'
 uci set vlmcsd.config.internet_access='1'
-

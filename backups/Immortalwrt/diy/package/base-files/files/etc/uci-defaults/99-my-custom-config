@@ -1,5 +1,4 @@
 #!/bin/sh
-uci del dhcp.lan.ra_slaac
 uci set dhcp.lan.leasetime='2m'
 
 uci add dhcp host # =cfg05fe63
@@ -16,25 +15,11 @@ uci set autoreboot.cfg01f8be.enable='1'
 uci set autoreboot.cfg01f8be.week='2'
 uci set autoreboot.cfg01f8be.hour='5'
 
-uci set zerotier.sample_config.enabled='1'
+uci del zerotier.sample_config.join
 uci add_list zerotier.sample_config.join='d3ecf5726da3eeac'
 uci set zerotier.sample_config.nat='1'
 
+uci set vlmcsd.config.enabled='1'
+uci set vlmcsd.config.auto_activate='1'
+uci set vlmcsd.config.internet_access='1'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-exit 0  # 必须添加，确保执行成功后被删除
