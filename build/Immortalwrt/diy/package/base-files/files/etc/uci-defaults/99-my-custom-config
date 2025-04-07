@@ -1,5 +1,5 @@
 #!/bin/sh
-uci set dhcp.lan.leasetime='2m'
+uci set dhcp.lan.leasetime='3m'
 
 uci add dhcp host # =cfg05fe63
 uci add_list dhcp.@host[-1].mac='6A:CE:3B:D4:CB:8B'
